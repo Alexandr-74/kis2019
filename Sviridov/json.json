@@ -1,0 +1,210 @@
+/* 1. Выписка карты заказа на разлив продукции.
+URL: http://localhost:8080/radixcoa/rest/lastversion/razliv
+ Request */
+{
+    "action" : "createPrikaz",
+    "nowDate" : "34/12/2020",
+    "numberOrderCardStatement" : "4534"
+
+}
+// Response
+{
+    "result" : "created",
+    "id" : "ID",
+    "codeShop" : 122,
+    "numberRazlivLine" : 123,
+    "numberPipelineBlendingAerationWorkshop" : 123,
+    "numberPlasticPackagingOrderNumber" : 123,
+    "date" : "34/12/2020"
+}
+
+/* 2. Прием продукции на ответственное хранение.
+URL: http://localhost:8080/radixcoa/rest/lastversion/hranenie
+ Request */
+{
+    "action" : "createPrikaz2",
+    "nowDate" : "34/12/2020",
+    "numberOrderCardStatement" : "5433",
+    "numberPrikaz" : "213"
+
+}
+// Response
+{
+    "result" : "created",
+    "status" : "product accepted",
+    "productName" : "NAME",
+    "sender" : "RADIX",
+    "recipient" : "RADIX warehouse",
+    "numberPipelineBlendingAerationWorkshop" : 123,
+    "numberPlasticPackagingOrderNumber" : 123,
+    "volumeOfProducts" : 34324,
+    "typeOfPlastic" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "blendType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "labelType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "date" : "34/12/2020"
+}
+
+
+/* 3. Приказ на производство продукции.
+URL: http://localhost:8080/radixcoa/rest/lastversion/proizvodstvo
+ Request */
+
+{
+    "action" : "createPrikaz3",
+    "nowDate" : "34/12/2020",
+    "numberOrderCardStatement" : "5433",
+    "numberPrikaz" : "213"
+
+}
+// Response
+{
+    "result" : "created",
+    "productName" : "NAME",
+    "sender" : "RADIX",
+    "recipient" : "RADIX warehouse",
+    "numberPipelineBlendingAerationWorkshop" : 123,
+    "numberPlasticPackagingOrderNumber" : 123,
+    "volumeOfProducts" : 34324,
+    "typeOfPlastic" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "blendType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "labelType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "date" : "34/12/2020"
+}
+
+/* 4. Выписка сертификата качества продукции.
+URL: http://localhost:8080/radixcoa/rest/lastversion/ka4estvo
+Request */
+{
+    "action" : "createPrikaz4",
+    "nowDate" : "34/12/2020",
+    "numberOrderCardStatement" : "4534",
+    "numberQualityCertificate" : "1231231"
+}
+// Response
+{
+    "result" : "created",
+    "volumeOfProducts" : 34324,
+    "id" : "ID",
+    "rangeOfPermissibleNorms" : "V NORME",
+    "impurityValue" : "13%",
+    "conclusion" : "The actual value of impurities according to the results in the norm of permissible",
+    "date" : "34/12/2020"
+}
+
+/* 5. Назначение заказа в производство.
+URL: http://localhost:8080/radixcoa/rest/lastversion/production
+Request */
+
+{
+    "action" : "createPrikaz5",
+    "nowDate" : "34/12/2020",
+    "numberOrderCardStatement" : "4534",
+    "numberOrder" : 123,
+}
+
+// Response
+{
+    "result" : "created",
+    "volumeOfProducts" : 34324,
+    "id" : "ID",
+    "numberUnit" : 11,
+    "numberMachine" : 14,
+    "numberPipeline" : 12,
+    "date" : "34/12/2020"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

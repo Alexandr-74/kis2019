@@ -173,38 +173,116 @@ Request */
     "date" : "34/12/2020"
 }
 
+/* 6. Протокол на выборку инфомация о приказе
+URL: http://localhost:8080/radixcoa/rest/lastversion/option/12345
+Request */
+
+{
+    "access" : "Prikaz5",
+    "orderId" : "12345",
+    "accessPassword" : "4534",
+    "access" : "reading",
+    "requestDate" : "34/12/2020"
+}
+
+// Response
+{
+    "result" : "order found",
+    "createDateOrder" : "34/12/2020",
+    "сontentLength": 495,
+    "soapAction": "http://localhost:8080/radixcoa/rest/lastversion/production",
+    "mode" : "reading",
+    "contentType": "text",
+    "id" : "12345",
+    "orderCreationDate" : "34/12/2020",
+    "orderSigned" : "Ivan Petrov",
+    "department" : "Warehouse, (еще возможные варианты: product spill, laboratory)",
+    "codeServer" : 200,
+    "accessDate" : "34/12/2020"
+}
+
+/* 7. Протокол на выборку чтение-редактирование
+URL: http://localhost:8080/radixcoa/rest/lastversion/type/12345
+Request */
+
+{
+    "access" : "only reading",
+    "orderId" : "12345",
+    "requestDate" : "34/12/2020"
+}
+
+// Response
+{
+    "status" : "product accepted",
+    "productName" : "NAME",
+    "sender" : "RADIX",
+    "recipient" : "RADIX warehouse",
+    "numberPipelineBlendingAerationWorkshop" : 123,
+    "numberPlasticPackagingOrderNumber" : 123,
+    "volumeOfProducts" : 34324,
+    "typeOfPlastic" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "blendType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "labelType" : [
+        {
+            "type" : 1
+        },
+        {
+            "type" : 2
+        },
+        {
+            "type" : 3
+        }
+    ],
+    "date" : "34/12/2020"
+}
 
 
 
+/* 8. Удаление
+URL: http://localhost:8080/radixcoa/rest/lastversion/delete/12345
+Request */
 
+{
+    "orderNumber" : "Prikaz5",
+    "orderId" : "12345",
+    "accessPassword" : "4534",
+    "accessDate" : "34/12/2020",
+    "access" : "delete",
+    "requestDate" : "34/12/2020"
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Response
+{
+    "result" : "order delet",
+    "createDateOrder" : "34/12/2020",
+    "сontentLength": 495,
+    "soapAction": "http://localhost:8080/radixcoa/rest/lastversion/production",
+    "mode" : "delet",
+    "contentType": "text",
+    "id" : "12345",
+    "orderDeleteDate" : "34/12/2020",
+    "orderSigned" : "Ivan Petrov",
+    "department" : "Product spill",
+    "codeServer" : 200,
+    "accessDate" : "34/12/2020"
+}

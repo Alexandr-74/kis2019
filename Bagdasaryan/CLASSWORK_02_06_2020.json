@@ -1,0 +1,145 @@
+// 1. Создание приказа на производство продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/productProizvodstvo
+// Request
+    {
+        "action" : "createPrikaz"
+    }
+// Response
+    {
+        "result" : "created",
+        "productCode" : "NNN",
+        "productName" : "NAME",
+        "productVolume" : 10,
+        "plasticContainer" : [
+            {"defaultP" : "small"},
+            {"typeP" : "big"},
+            {"typeP" : "middle"},
+            {"typeP" : "small"}
+        ],
+        "blendType" : [
+            {"defaultB" : "sort 3"},
+            {"typeB" : "sort 1"},
+            {"typeB" : "sort 2"},
+            {"typeB" : "sort 3"}
+        ],
+        "labelType" : [
+            {"defaultL" : "3"},
+            {"typeL" : "1"},
+            {"typeL" : "2"},
+            {"typeL" : "3"}
+        ],
+        "productionDate" : "DD/MM/YYYY"
+    }
+
+// 2. Изменение номера приказа
+// URL: http://localhost:8080/radixcoa/rest/lastversion/productProizvodstvo/NNN
+// Request:
+{
+    "action" : "createPrikaz",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+// 3. Создание карты заказа
+// URL: http://localhost:8080/radixcoa/rest/lastversion/kartaZakaza
+// Request:
+    {
+        "action" : "createOrderCard" // Создание карты заказа
+    }
+
+// Response:
+    {
+        "statementNum" : "SSSS", // Номер выписки
+        "productCode" : "NNN", // Номер продукции
+        "productionHallNum" : "PPPP", // Номер цеха
+        "fillingLineNum" : "FFFF", // Номер разливочной линии
+        "labelCardNum" : 1, // Номер карты заказа на этикетку
+        "plasticContainerCardNum" : 11,
+        "statementDate" : "DD/MM/YYYY"
+    }
+
+
+// 4. Создание сертификата качества продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/qualityCertificate
+// Request:
+    {
+        "action" : "createQualityCertificate"
+    }
+
+// Response:
+    {
+        "certificateNum" : "1000",
+        "dateOfProduction" : "DD/MM/YYYY",
+        "productName" : "XXXX",
+        "impurities" : [
+            {"imp" : "I1"},
+            {"imp" : "I2"},
+            {"imp" : "I3"},
+        ],
+        "impuritiesCount" : 3,
+        "sertificateStatementDate" : "DD/MM/YYYY",
+        "result" : "RES"
+    }
+
+/*
+Delete
+*/
+
+// 5. Удаление приказа на производство продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/delete/productProizvodstvo
+// Request
+{
+    "action" : "deleteOrderOfProduction",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+// 6. Удаление карты заказа
+//URL: http://localhost:8080/radixcoa/rest/lastversion/delete/kartaZakaza
+// Request
+{
+    "action" : "deleteOrderCard",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+// 7. Удаление сертификата качества продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/delete/qualityCertificate
+// Request
+{
+    "action" : "deleteQualityCertificate",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+/*
+Протокол на выборку
+*/
+
+//8. Отметка о выполнении приказа на производство продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/done/productProizvodstvo
+// Request
+{
+    "action" : "doneOrderOfProduction",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+//9. Отметка о выполнении карты заказа
+// URL: http://localhost:8080/radixcoa/rest/lastversion/done/kartaZakaza
+// Request
+{
+    "action" : "doneOrderCard",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
+//10. Отметка о выполнении сертификата качества продукции
+// URL: http://localhost:8080/radixcoa/rest/lastversion/done/qualityCertificate
+// Request
+{
+    "action" : "doneQualityCertificate",
+    "field" : "productCode",
+    "value" : "MMM"
+}
+
